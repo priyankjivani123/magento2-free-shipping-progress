@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Priyank\FreeShippingProgressHyva\ViewModel;
+namespace PriyankJivani\FreeShippingProgressHyva\ViewModel;
 
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;

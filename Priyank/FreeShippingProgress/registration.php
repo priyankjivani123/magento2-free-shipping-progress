@@ -3,6 +3,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Priyank_FreeShippingProgress',
+    'PriyankJivani_FreeShippingProgress',
     __DIR__
 );

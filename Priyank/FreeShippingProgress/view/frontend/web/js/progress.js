@@ -8,7 +8,7 @@ define([
     return Component.extend({
 
         defaults: {
-            template: "Priyank_FreeShippingProgress/progress"
+            template: "PriyankJivani_FreeShippingProgress/progress"
         },
 
         initialize: function () {

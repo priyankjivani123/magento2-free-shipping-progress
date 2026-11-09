@@ -2,6 +2,6 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/head.xsd">
 
     <head>
-        <css src="Priyank_FreeShippingProgress::css/style.css"/>
+        <css src="PriyankJivani_FreeShippingProgress::css/style.css"/>
     </head>
 </page>

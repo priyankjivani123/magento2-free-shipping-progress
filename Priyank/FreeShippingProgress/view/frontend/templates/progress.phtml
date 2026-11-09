@@ -1,4 +1,4 @@
-<?php /** @var \Priyank\FreeShippingProgress\ViewModel\Config $config */ ?>
+<?php /** @var \PriyankJivani\FreeShippingProgress\ViewModel\Config $config */ ?>
 <?php $config = $block->getData('config')->getConfigArray(); ?>
 
 <?php if (!empty($config['enabled']) && $config['enabled'] == 1): ?>
@@ -12,7 +12,7 @@
             "Magento_Ui/js/core/app": {
                 "components": {
                     "freeShippingProgress": {
-                        "component": "Priyank_FreeShippingProgress/js/progress",
+                        "component": "PriyankJivani_FreeShippingProgress/js/progress",
                         "freeShippingLimit": <?= !empty($config['min_amount']) ? (int)$config['min_amount'] : 0 ?>
                     }
                 }

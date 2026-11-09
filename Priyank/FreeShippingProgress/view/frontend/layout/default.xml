@@ -6,9 +6,9 @@
             <referenceContainer name="after.body.start">
             <block class="Magento\Framework\View\Element\Template"
                    name="free_shipping_progress"
-                   template="Priyank_FreeShippingProgress::progress.phtml">
+                   template="PriyankJivani_FreeShippingProgress::progress.phtml">
                       <arguments>
-                    <argument name="config" xsi:type="object">Priyank\FreeShippingProgress\ViewModel\Config</argument>
+                    <argument name="config" xsi:type="object">PriyankJivani\FreeShippingProgress\ViewModel\Config</argument>
                 </arguments>
             </block>
         </referenceContainer>

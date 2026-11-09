@@ -1,6 +1,6 @@
 {
-    "name": "priyank/module-free-shipping-progress",
-    "description": "Dynamic Free Shipping Progress Bar for Magento 2 / Adobe Commerce supporting Luma theme (Knockout.js) and Hyvä theme (Alpine.js & Tailwind CSS).",
+    "name": "priyankjivani/module-free-shipping-progress",
+    "description": "Dynamic Free Shipping Progress Bar for Magento 2 / Adobe Commerce supporting Luma theme (Knockout.js) and Hyv\u00e4 theme (Alpine.js & Tailwind CSS).",
     "type": "magento2-module",
     "version": "1.0.0",
     "license": "MIT",
@@ -17,7 +17,7 @@
         "magento/framework": ">=103.0.0"
     },
     "suggest": {
-        "hyva-themes/magento2-theme-module": "Required for Hyvä Theme Alpine.js frontend integration"
+        "hyva-themes/magento2-theme-module": "Required for Hyv\u00e4 Theme Alpine.js frontend integration"
     },
     "autoload": {
         "files": [
@@ -25,8 +25,8 @@
             "Priyank/FreeShippingProgressHyva/registration.php"
         ],
         "psr-4": {
-            "Priyank\\FreeShippingProgress\\": "Priyank/FreeShippingProgress/",
-            "Priyank\\FreeShippingProgressHyva\\": "Priyank/FreeShippingProgressHyva/"
+            "PriyankJivani\\FreeShippingProgress\\": "Priyank/FreeShippingProgress/",
+            "PriyankJivani\\FreeShippingProgressHyva\\": "Priyank/FreeShippingProgressHyva/"
         }
     }
 }
