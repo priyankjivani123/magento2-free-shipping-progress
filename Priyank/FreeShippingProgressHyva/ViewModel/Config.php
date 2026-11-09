@@ -1,11 +1,14 @@
 <?php
+declare(strict_types=1);
+
 namespace Priyank\FreeShippingProgressHyva\ViewModel;
 
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Store\Model\StoreManagerInterface;
 
 /**
- * Configuration ViewModel for Free Shipping Progress
+ * Configuration ViewModel for Free Shipping Progress in Hyvä Theme
  */
 class Config implements ArgumentInterface
 {
@@ -19,19 +22,24 @@ class Config implements ArgumentInterface
     protected $scopeConfig;
 
     /**
-     * Config constructor.
-     *
-     * @param ScopeConfigInterface $scopeConfig
+     * @var StoreManagerInterface
      */
-    public function __construct(ScopeConfigInterface $scopeConfig)
-    {
+    protected $storeManager;
+
+    /**
+     * @param ScopeConfigInterface $scopeConfig
+     * @param StoreManagerInterface $storeManager
+     */
+    public function __construct(
+        ScopeConfigInterface $scopeConfig,
+        StoreManagerInterface $storeManager
+    ) {
         $this->scopeConfig = $scopeConfig;
+        $this->storeManager = $storeManager;
     }
 
     /**
      * Check if free shipping progress bar is enabled
-     *
-     * @return bool
      */
     public function isEnabled(): bool
     {
@@ -40,8 +48,6 @@ class Config implements ArgumentInterface
 
     /**
      * Get minimum amount for free shipping
-     *
-     * @return float
      */
     public function getMinAmount(): float
     {
@@ -50,8 +56,6 @@ class Config implements ArgumentInterface
 
     /**
      * Get message displayed before the progress bar
-     *
-     * @return string
      */
     public function getBeforeMessage(): string
     {
@@ -59,16 +63,28 @@ class Config implements ArgumentInterface
     }
 
     /**
+     * Get active store currency symbol
+     */
+    public function getCurrencySymbol(): string
+    {
+        try {
+            $currency = $this->storeManager->getStore()->getCurrentCurrency();
+            return (string) ($currency->getCurrencySymbol() ?: $currency->getCurrencyCode());
+        } catch (\Throwable $e) {
+            return '$';
+        }
+    }
+
+    /**
      * Get full configuration array for JS
-     *
-     * @return array
      */
     public function getConfigArray(): array
     {
         return [
-            'enabled'        => $this->isEnabled(),
-            'min_amount'     => $this->getMinAmount(),
-            'before_message' => $this->getBeforeMessage()
+            'enabled'         => $this->isEnabled(),
+            'min_amount'      => $this->getMinAmount(),
+            'before_message'  => $this->getBeforeMessage(),
+            'currency_symbol' => $this->getCurrencySymbol()
         ];
     }
 }
